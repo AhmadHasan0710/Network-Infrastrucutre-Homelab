@@ -1,2 +1,2 @@
 # Network-Infrastrucutre-Homelab
-Designed and implemented an enterprise-style network homelab using pfSense, featuring multi-VLAN segmentation, inter-VLAN routing, DHCP services, and firewall rule configuration. Focused on network security, traffic isolation, and real-world infrastructure design.
+A well Designed & interconnected, enterprise-style network; utilizing PFSense, which features multi-VLAN segmentation, inter-VLAN routing, DHCP services, & intermiddient firewall configurations. This infrastructure is primarily focused on network security, traffic isolation & monitoring, as well as real-world infrastructure design.
