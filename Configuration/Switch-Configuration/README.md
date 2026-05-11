@@ -1,16 +1,9 @@
-<ul>
-  <li>Management IP addressing per switch</li>
-  <li>Default gateway assignment (VLAN 80 - Infrastructure Management)</li>
-  <li>Hostname and domain naming conventions</li>
-  <li>VLAN-to-subnet mapping reference structure</li>
-</ul>
-
-<h2>Design Philosophy</h2>
+<h1>Network Switch Configuration Documentation</h1>
 
 <p>
-The goal of this approach is to maintain a clean separation between <b>infrastructure design</b> and <b>service-level configuration</b>, ensuring scalability, readability, and ease of automation in future deployments.
+This README.MD contains structured XML configuration files for all the switches within this network infrastructure.
 </p>
 
 <p>
-This structure also reflects real-world enterprise networking practices, where configuration is modularized across switching, routing, security, and service layers.
+These configurations are designed to represent the foundational architecture of the switching layer, including core switching, distribution switching, VLAN segmentation, uplink design, and baseline security hardening.
 </p>
