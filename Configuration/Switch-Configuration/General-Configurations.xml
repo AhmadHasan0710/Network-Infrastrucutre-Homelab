@@ -1,0 +1,70 @@
+<switch-general>
+
+  <!-- ========================= -->
+  <!-- SYSTEM -->
+  <!-- ========================= -->
+  <identity>
+    <hostname>SWITCH_NAME</hostname>
+    <domain-name>homelab.local</domain-name>
+    <management-vlan>80</management-vlan>
+    <management-ip>172.16.80.X</management-ip>
+    <default-gateway>172.16.80.1</default-gateway>
+  </identity>
+
+  <!-- ========================= -->
+  <!-- SECURITY: PASSWORDS -->
+  <!-- ========================= -->
+  <security>
+    <enable-secret encrypted="true">CiscoLord123</enable-secret>
+
+    <console>
+      <password encrypted="true">CiscoLord123</password>
+      <login>true</login>
+    </console>
+
+    <vty>
+      <password encrypted="true">CiscoLord123</password>
+      <login>local</login>
+      <transport>ssh</transport>
+    </vty>
+  </security>
+
+  <!-- ========================= -->
+  <!-- SSH CONFIGURATION -->
+  <!-- ========================= -->
+  <ssh>
+    <version>2</version>
+    <rsa-key-size>2048</rsa-key-size>
+    <timeout>60</timeout>
+    <authentication-retries>2</authentication-retries>
+  </ssh>
+
+  <!-- ========================= -->
+  <!-- USER ACCOUNTS -->
+  <!-- ========================= -->
+  <users>
+    <user>
+      <username>admin</username>
+      <secret encrypted="true">CiscoLord123</secret>
+      <privilege>15</privilege>
+    </user>
+  </users>
+
+  <!-- ========================= -->
+  <!-- PORT SECURITY (DEFAULT) -->
+  <!-- ========================= -->
+  <port-security>
+    <mode>sticky</mode>
+    <max-mac>2</max-mac>
+    <violation>shutdown</violation>
+  </port-security>
+
+  <!-- ========================= -->
+  <!-- DISABLE UNUSED PORTS -->
+  <!-- ========================= -->
+  <unused-ports>
+    <shutdown>true</shutdown>
+    <description>Disabled for security</description>
+  </unused-ports>
+
+</switch-general>

@@ -1,0 +1,90 @@
+<core-switch>
+
+  <!-- ========================= -->
+  <!-- VLAN DEFINITIONS -->
+  <!-- ========================= -->
+  <vlans>
+    <vlan id="10" name="Core_Services"/>
+    <vlan id="20" name="Servers"/>
+    <vlan id="30" name="Monitoring"/>
+    <vlan id="40" name="Storage"/>
+    <vlan id="50" name="Clients"/>
+    <vlan id="60" name="Security"/>
+    <vlan id="70" name="Lab"/>
+    <vlan id="80" name="Management"/>
+    <vlan id="90" name="Guest"/>
+    <vlan id="99" name="Native"/>
+  </vlans>
+
+  <!-- ========================= -->
+  <!-- ETHERCHANNEL GROUPS -->
+  <!-- ========================= -->
+  <etherchannels>
+
+    <channel id="1">
+      <description>Dist Switch 1</description>
+      <ports>1-7</ports>
+      <mode>active</mode>
+      <protocol>LACP</protocol>
+      <native-vlan>99</native-vlan>
+      <allowed-vlans>10,20,80</allowed-vlans>
+    </channel>
+
+    <channel id="2">
+      <description>Dist Switch 2</description>
+      <ports>8-14</ports>
+      <mode>active</mode>
+      <protocol>LACP</protocol>
+      <native-vlan>99</native-vlan>
+      <allowed-vlans>30,40,50,60,70</allowed-vlans>
+    </channel>
+
+    <channel id="3">
+      <description>Dist Switch 3</description>
+      <ports>15-21</ports>
+      <mode>active</mode>
+      <protocol>LACP</protocol>
+      <native-vlan>99</native-vlan>
+      <allowed-vlans>90</allowed-vlans>
+    </channel>
+
+  </etherchannels>
+
+  <!-- ========================= -->
+  <!-- PFSENSE TRUNK -->
+  <!-- ========================= -->
+  <uplink>
+    <port>24</port>
+    <mode>trunk</mode>
+    <native-vlan>99</native-vlan>
+    <allowed-vlans>10-90</allowed-vlans>
+    <description>pfSense Trunk</description>
+  </uplink>
+
+  <!-- ========================= -->
+  <!-- SECURITY HARDENING -->
+  <!-- ========================= -->
+  <security>
+
+    <dhcp-snooping>
+      <enabled>true</enabled>
+      <trusted-ports>24</trusted-ports>
+    </dhcp-snooping>
+
+    <arp-inspection>
+      <enabled>true</enabled>
+      <vlans>10-90</vlans>
+    </arp-inspection>
+
+    <bpdu-guard>
+      <enabled>true</enabled>
+    </bpdu-guard>
+
+    <storm-control>
+      <broadcast>70%</broadcast>
+      <multicast>70%</multicast>
+    </storm-control>
+
+  </security>
+
+</core-switch>
