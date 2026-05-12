@@ -1693,7 +1693,7 @@
 		<tailscaleauth>
 			<config>
 				<loginserver>https://controlplane.tailscale.com</loginserver>
-				<preauthkey>tskey-auth-kf7Dq63eAN11CNTRL-to5wDkV2TNJfQ43bizAFNJ1wAdKjfiXN2</preauthkey>
+				<preauthkey>SecretKey</preauthkey>
 				<service_clean></service_clean>
 			</config>
 		</tailscaleauth>
