@@ -5,7 +5,7 @@ This directory contains structured configuration files for the pfSense firewall 
 </p>
 
 <p>
-The <b>liveconfig.xml</b> file represents the complete, active configuration used by the system. It contains the full set of operational settings required for the firewall to function, including interfaces, VLAN assignments, routing, firewall rules, NAT, and DNS configurations.
+The <b>liveconfig.xml</b> file represents the complete, active configuration used by the system. It contains the full set of operational settings required for the firewall to function, including interfaces, VLAN assignments, firewall rules, NAT, and additional configurations.
 </p>
 
 <p>
