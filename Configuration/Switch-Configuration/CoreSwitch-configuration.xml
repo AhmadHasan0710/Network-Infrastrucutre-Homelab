@@ -1,5 +1,14 @@
 <core-switch>
 
+
+  <!-- ========================= -->
+  <!-- HOSTNAME -->
+  <!-- ========================= -->
+  <identity>
+    <hostname>CORE-SW1</hostname>
+    <management-ip>172.16.80.10</management-ip>
+  </identity>
+  
   <!-- ========================= -->
   <!-- VLAN DEFINITIONS -->
   <!-- ========================= -->
